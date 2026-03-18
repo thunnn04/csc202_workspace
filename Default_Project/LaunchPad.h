@@ -282,7 +282,7 @@ void seg7_hex(uint8_t hex, uint8_t seg7_dig);
 
 void dipsw_init(void);
 void dipsw_deinit(void);
-uint8_t ReadSw(void);
+uint8_t dipsw_read(void);
 bool is_pb_down(uint8_t pb_idx);
 bool is_pb_up(uint8_t pb_idx);
 void dipsw_filter_enable(void);
