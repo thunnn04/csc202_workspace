@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "lab7_p1_2",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab7_p1_2",
+                "resourceId": "/lab7_p1_2/main.c"
+            }
+        },
+        {
+            "name": "lab6",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab6",
+                "resourceId": "/lab6/main.c"
+            }
+        },
+        {
+            "name": "lab7_p3",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab7_p3",
+                "resourceId": "/lab7_p3/main.c"
+            }
+        }
+    ]
+}
