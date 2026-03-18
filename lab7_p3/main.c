@@ -43,12 +43,16 @@ void SysTick_Handler(void)
 {
   uint8_t dip   = dipsw_read();
   uint8_t count = 0;
+  uint8_t mask  = 1;
 
   for (uint8_t i = 0; i < 4; i++)
   {
+    if ((dip & mask) == mask)
     {
       count++;
     }
+
+    mask = mask << 1;
   }
 
   seg7_hex(count, SEG7_DIG0_ENABLE_IDX);
@@ -64,7 +68,7 @@ void run_lab7_part3(void)
 
   while (!done)
   {
-    lcd_set_ddram_addr(0x06);
+    lcd_set_ddram_addr(LCD_LINE1_ADDR + LCD_CHAR_POSITION_5);
     lcd_write_doublebyte(value);
 
     msec_delay(200);
@@ -75,13 +79,11 @@ void run_lab7_part3(void)
       value = 0;
     }
   }
-
-  sys_tick_disable();
-  seg7_off();
 }
 
 int main(void)
-{clock_init_40mhz();
+{
+  clock_init_40mhz();
   launchpad_gpio_init();
 
   I2C_mstr_init();

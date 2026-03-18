@@ -25,6 +25,15 @@
             "request": "launch",
             "projectInfo": {
                 "name": "lab7_p3",
+                "resourceId": "/lab7_p3/LaunchPad.c"
+            }
+        },
+        {
+            "name": "lab7_p3 (1)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab7_p3",
                 "resourceId": "/lab7_p3/main.c"
             }
         }

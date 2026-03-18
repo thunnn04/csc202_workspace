@@ -1259,7 +1259,7 @@ void dipsw_deinit(void)
 //              the ON position, and cleared (0) if the switch is in the OFF 
 //               position.
 // -----------------------------------------------------------------------------
-uint8_t ReadSw(void)
+uint8_t dipsw_read(void)
 {
   uint8_t switch_value = 0;
   uint8_t dip_value = 0;
