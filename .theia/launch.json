@@ -36,6 +36,24 @@
                 "name": "lab7_p3",
                 "resourceId": "/lab7_p3/main.c"
             }
+        },
+        {
+            "name": "lab7_p1_2 (1)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab7_p1_2",
+                "resourceId": "/lab7_p1_2"
+            }
+        },
+        {
+            "name": "lab6 (1)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "lab6",
+                "resourceId": "/lab6"
+            }
         }
     ]
 }

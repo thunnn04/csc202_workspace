@@ -1,43 +1,15 @@
 //*****************************************************************************
-//*****************************    C Source Code    ***************************
-//*****************************************************************************
-//  DESIGNER NAME:  TBD
-//
-//       LAB NAME:  TBD
-//
-//      FILE NAME:  main.c
-//
-//-----------------------------------------------------------------------------
-//
-// DESCRIPTION:
-//    This project runs on the LP_MSPM0G3507 LaunchPad board interfacing to
-//    the CSC202 Expansion board.
-//
-//    This code ... *** COMPLETE THIS BASED ON LAB REQUIREMENTS ***
-//
-//*****************************************************************************
+// Lab 7 Part 4 - Using GPIO Interrupts
 //*****************************************************************************
 
-//-----------------------------------------------------------------------------
-// Loads standard C include files
-//-----------------------------------------------------------------------------
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-//-----------------------------------------------------------------------------
-// Loads MSP launchpad board support macros and definitions
-//-----------------------------------------------------------------------------
 #include "LaunchPad.h"
 #include "clock.h"
 #include "lcd1602.h"
 #include <ti/devices/msp/msp.h>
-
-// Define a structure to hold different data types
-
-#define MSPM0_CLOCK_FREQUENCY (40E6)
-#define SYST_TICK_PERIOD (10.25E-3)
-#define SYST_TICK_PERIOD_COUNT (SYST_TICK_PERIOD * MSPM0_CLOCK_FREQUENCY)
 
 volatile bool pb1_pressed = false;
 volatile bool pb2_toggle  = false;
@@ -51,7 +23,6 @@ void config_pb_interrupts(void)
   GPIOA->IMASK |= (1 << PB1_PIN) | (1 << PB2_PIN);
   NVIC_EnableIRQ(GPIOA_INT_IRQn);
 }
-
 void GROUP1_IRQHandler(void)
 {
   uint32_t status = GPIOA->MIS;
@@ -68,7 +39,6 @@ void GROUP1_IRQHandler(void)
     GPIOA->ICLR = (1 << PB2_PIN);
   }
 }
-
 void run_lab7_part4(void)
 {
   uint8_t value = 0;
@@ -81,29 +51,35 @@ void run_lab7_part4(void)
   config_pb_interrupts();
 
   while (!done)
-{
-    lcd_clear();
+  {
     lcd_set_ddram_addr(0x06);
     lcd_write_byte(value);
 
     leds_output(value);
 
     msec_delay(200);
-
     value++;
+
     if (value == 100)
-        value = 0;
+    {
+      value = 0;
+    }
 
     lcd_set_ddram_addr(0x40);
-
     if (pb2_toggle)
-        lcd_write_string("PB2 PRESSED     ");
+    {
+      lcd_write_string("PB2 PRESSED     ");
+    }
     else
-        lcd_write_string("                ");
+    {
+      lcd_write_string("                ");
+    }
 
     if (pb1_pressed)
-        done = true;
-}
+    {
+      done = true;
+    }
+  }
 
   lcd_clear();
   lcd_set_ddram_addr(0x00);
@@ -123,8 +99,6 @@ int main(void)
   leds_disable();
   seg7_init();
   dipsw_init();
-
-  --enable_irq();
 
   run_lab7_part4();
 
