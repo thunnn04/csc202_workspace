@@ -54,69 +54,6 @@
                 "name": "lab6",
                 "resourceId": "/lab6"
             }
-        },
-        {
-            "name": "lab7_p4",
-            "type": "ccs-debug",
-            "request": "launch",
-            "projectInfo": {
-                "name": "lab7_p4",
-                "resourceId": "/lab7_p4"
-            }
-        },
-        {
-            "name": "lab8_p1",
-            "type": "ccs-debug",
-            "request": "launch",
-            "projectInfo": {
-                "name": "lab8_p1",
-                "resourceId": "/lab8_p1"
-            }
-        },
-        {
-            "name": "lab8_p1 (1)",
-            "type": "ccs-debug",
-            "request": "launch",
-            "projectInfo": {
-                "name": "lab8_p1",
-                "resourceId": "/lab8_p1/lab8p1_main.c"
-            }
-        },
-        {
-            "name": "lab8_p2",
-            "type": "ccs-debug",
-            "request": "launch",
-            "projectInfo": {
-                "name": "lab8_p2",
-                "resourceId": "/lab8_p2/lab8p2_main.c"
-            }
-        },
-        {
-            "name": "lab8_p3",
-            "type": "ccs-debug",
-            "request": "launch",
-            "projectInfo": {
-                "name": "lab8_p3",
-                "resourceId": "/lab8_p3/lab8p3_main.c"
-            }
-        },
-        {
-            "name": "lab8_p3 (1)",
-            "type": "ccs-debug",
-            "request": "launch",
-            "projectInfo": {
-                "name": "lab8_p3",
-                "resourceId": "/lab8_p3/adc.h"
-            }
-        },
-        {
-            "name": "lab8_p3 (2)",
-            "type": "ccs-debug",
-            "request": "launch",
-            "projectInfo": {
-                "name": "lab8_p3",
-                "resourceId": "/lab8_p3"
-            }
         }
     ]
 }
